@@ -1,0 +1,49 @@
+@import 'base';
+
+.navbar {
+  width: 100%;
+  @include flexCenter(row, space-between, center);
+  padding: 0.5em 4em;
+  background-color: var(--clr-dark);
+
+  .navbar__brand-name {
+    color: var(--clr-light);
+  }
+
+  .navbar__ul {
+    @include flexCenter(row, space-evenly, center);
+    width: 40%;
+    font-size: var(--fs-label);
+
+    .right-profile {
+      position: relative;
+      cursor: pointer;
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 26px;
+        min-width: 80px;
+        z-index: 1;
+        background-color: var(--clr-light);
+        border-radius: 5px;
+
+        a {
+          color: var(--clr-dark);
+        }
+      }
+
+      &:hover .dropdown-menu {
+        display: block;
+      }
+    }
+
+    a {
+      color: var(--clr-light);
+    }
+  }
+}
+
+.right-profile:hover .dropdown-menu {
+  display: block;
+}

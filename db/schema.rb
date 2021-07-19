@@ -223,20 +223,6 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
     t.string "memory_size"
   end
 
-  create_table "ssd_tables", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.string "capacity"
-    t.string "type"
-    t.string "form_factor"
-    t.string "nand_flash"
-    t.string "interface"
-    t.string "rating"
-    t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "ssds", force: :cascade do |t|
     t.string "name"
     t.string "image"

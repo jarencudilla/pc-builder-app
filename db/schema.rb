@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_081433) do
+ActiveRecord::Schema.define(version: 2021_07_19_064713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,9 +149,9 @@ ActiveRecord::Schema.define(version: 2021_07_17_081433) do
   end
 
   create_table "mobos", force: :cascade do |t|
-    t.string "socket_cpu", array: true
+    t.string "socket_cpu"
     t.string "form_factor"
-    t.integer "max_memory"
+    t.string "max_memory"
     t.integer "memory_slots"
     t.string "color"
     t.string "rating"
@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(version: 2021_07_17_081433) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "image"
-    t.string "supported_memory"
+    t.string "supported_memory", array: true
   end
 
   create_table "psus", force: :cascade do |t|

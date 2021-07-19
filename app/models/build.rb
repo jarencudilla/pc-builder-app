@@ -5,8 +5,6 @@ class Build < ApplicationRecord
   belongs_to :psus
   belongs_to :cases
   belongs_to :cpu_fans
-  belongs_to :hdds
-  belongs_to :ssds
   has_many :build_gpus, dependent: :destroy
   has_many :gpus, through: :build_gpus
   has_many :build_rams, dependent: :destroy

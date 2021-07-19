@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_062204) do
+ActiveRecord::Schema.define(version: 2021_07_19_115203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_062204) do
   create_table "hdds", force: :cascade do |t|
     t.string "capacity"
     t.string "type"
-    t.integer "cache"
+    t.string "cache"
     t.string "form_factor"
     t.string "interface"
     t.string "rating"

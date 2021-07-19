@@ -13,4 +13,8 @@ class Build < ApplicationRecord
   has_many :storages, through: :build_storages
   has_many :build_case_fans, dependent: :destroy
   has_many :case_fans, through: :build_case_fans
+  has_many :build_ssd, dependent: :destroy
+  has_many :builds, through: :build_ssds
+  has_many :build_hdds, dependent: :destroy
+  has_many :builds, through: :build_hdds
 end

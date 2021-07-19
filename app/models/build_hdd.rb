@@ -1,0 +1,2 @@
+class BuildHdd < ApplicationRecord
+end

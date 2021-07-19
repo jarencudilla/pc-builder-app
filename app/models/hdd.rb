@@ -1,0 +1,2 @@
+class Hdd < ApplicationRecord
+end

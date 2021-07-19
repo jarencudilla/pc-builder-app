@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_064713) do
+ActiveRecord::Schema.define(version: 2021_07_19_082659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,9 +165,9 @@ ActiveRecord::Schema.define(version: 2021_07_19_064713) do
 
   create_table "psus", force: :cascade do |t|
     t.string "form_factor"
-    t.integer "efficiency_rating"
-    t.integer "wattage"
-    t.boolean "modular"
+    t.string "efficiency_rating"
+    t.string "wattage"
+    t.string "modular"
     t.string "color"
     t.string "rating"
     t.float "price"

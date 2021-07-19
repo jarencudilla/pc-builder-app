@@ -14,8 +14,14 @@
   --clr-darker: #202020;
   --clr-darkest: #101010;
 
-  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.145),
-    -0.1em 0.125em 0.25em rgba(0, 0, 0, 0.1);
+  --clr-accent: #0f89ca;
+  --clr-accent2: #1a578f;
+
+  --clr-accent3: #91c13e;
+  --clr-accent4: #22af4b;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.2),
+    -0.1em 0.125em 0.25em rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -47,8 +53,9 @@ p {
 }
 
 a,
+label,
 ::placeholder {
-  font-size: var(--fs-body);
+  font-size: var(--fs-label);
 }
 
 *,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_081433) do
+ActiveRecord::Schema.define(version: 2021_07_19_062204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,6 +148,20 @@ ActiveRecord::Schema.define(version: 2021_07_17_081433) do
     t.string "memory_type"
   end
 
+  create_table "hdds", force: :cascade do |t|
+    t.string "capacity"
+    t.string "type"
+    t.integer "cache"
+    t.string "form_factor"
+    t.string "interface"
+    t.string "rating"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "image"
+  end
+
   create_table "mobos", force: :cascade do |t|
     t.string "socket_cpu", array: true
     t.string "form_factor"
@@ -192,20 +206,6 @@ ActiveRecord::Schema.define(version: 2021_07_17_081433) do
     t.string "memory_type"
   end
 
-  create_table "storages", force: :cascade do |t|
-    t.string "capacity"
-    t.string "type"
-    t.integer "cache"
-    t.string "form_factor"
-    t.string "interface"
-    t.string "rating"
-    t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.string "image"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -226,5 +226,5 @@ ActiveRecord::Schema.define(version: 2021_07_17_081433) do
   add_foreign_key "build_rams", "builds"
   add_foreign_key "build_rams", "rams"
   add_foreign_key "build_storages", "builds"
-  add_foreign_key "build_storages", "storages"
+  add_foreign_key "build_storages", "hdds", column: "storage_id"
 end

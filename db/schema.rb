@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_082659) do
+ActiveRecord::Schema.define(version: 2021_07_19_091308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -179,9 +179,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_082659) do
 
   create_table "rams", force: :cascade do |t|
     t.string "speed"
-    t.string "module"
     t.integer "latency"
-    t.integer "quantity"
     t.string "color"
     t.string "rating"
     t.float "price"
@@ -190,6 +188,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_082659) do
     t.string "name"
     t.string "image"
     t.string "memory_type"
+    t.string "memory_size"
   end
 
   create_table "storages", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class BuildSsd < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Ssd < ApplicationRecord
+end

@@ -1,0 +1,54 @@
+@import 'base';
+
+.form-section {
+  @include flexCenter(row, center, center);
+  margin-top: 5vh;
+
+  .form-section__container {
+    border-radius: 5px;
+    box-shadow: var(--bs);
+    padding: 3em 3em;
+    background-color: var(--clr-light);
+
+    h1 {
+      margin-bottom: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--clr-dark);
+    }
+
+    .field {
+      margin-bottom: 1em;
+    }
+
+    input {
+      width: 35rem;
+      font-size: var(--fs-body);
+      padding: 0.5em;
+      border: none;
+      outline: none;
+      background-color: rgb(214, 214, 214);
+      border-radius: 5px;
+    }
+
+    input[type='submit'] {
+      background-color: var(--clr-accent4);
+      color: var(--clr-light);
+      margin: 1em 0 2em;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--clr-accent3);
+      }
+    }
+
+    .btn {
+      text-align: center;
+
+      a {
+        color: var(--clr-darker);
+        text-decoration: underline;
+      }
+    }
+  }
+}

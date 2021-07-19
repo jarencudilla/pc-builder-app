@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_091308) do
+ActiveRecord::Schema.define(version: 2021_07_19_134614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2021_07_19_091308) do
     t.index ["gpu_id"], name: "index_build_gpus_on_gpu_id"
   end
 
+  create_table "build_hdds", force: :cascade do |t|
+    t.bigint "build_id", null: false
+    t.bigint "hdd_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["build_id"], name: "index_build_hdds_on_build_id"
+    t.index ["hdd_id"], name: "index_build_hdds_on_hdd_id"
+  end
+
   create_table "build_rams", force: :cascade do |t|
     t.bigint "build_id", null: false
     t.bigint "ram_id", null: false
@@ -40,6 +49,15 @@ ActiveRecord::Schema.define(version: 2021_07_19_091308) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["build_id"], name: "index_build_rams_on_build_id"
     t.index ["ram_id"], name: "index_build_rams_on_ram_id"
+  end
+
+  create_table "build_ssds", force: :cascade do |t|
+    t.bigint "build_id", null: false
+    t.bigint "ssd_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["build_id"], name: "index_build_ssds_on_build_id"
+    t.index ["ssd_id"], name: "index_build_ssds_on_ssd_id"
   end
 
   create_table "build_storages", force: :cascade do |t|
@@ -148,6 +166,20 @@ ActiveRecord::Schema.define(version: 2021_07_19_091308) do
     t.string "memory_type"
   end
 
+  create_table "hdds", force: :cascade do |t|
+    t.string "capacity"
+    t.string "rpm"
+    t.string "cache"
+    t.string "form_factor"
+    t.string "interface"
+    t.string "rating"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "image"
+  end
+
   create_table "mobos", force: :cascade do |t|
     t.string "socket_cpu"
     t.string "form_factor"
@@ -191,18 +223,32 @@ ActiveRecord::Schema.define(version: 2021_07_19_091308) do
     t.string "memory_size"
   end
 
-  create_table "storages", force: :cascade do |t|
+  create_table "ssd_tables", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
     t.string "capacity"
     t.string "type"
-    t.integer "cache"
     t.string "form_factor"
+    t.string "nand_flash"
     t.string "interface"
     t.string "rating"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ssds", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.string "capacity"
+    t.string "type"
+    t.string "form_factor"
+    t.string "nand_flash"
+    t.string "interface"
+    t.string "rating"
+    t.float "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -222,8 +268,12 @@ ActiveRecord::Schema.define(version: 2021_07_19_091308) do
   add_foreign_key "build_case_fans", "case_fans"
   add_foreign_key "build_gpus", "builds"
   add_foreign_key "build_gpus", "gpus"
+  add_foreign_key "build_hdds", "builds"
+  add_foreign_key "build_hdds", "hdds"
   add_foreign_key "build_rams", "builds"
   add_foreign_key "build_rams", "rams"
+  add_foreign_key "build_ssds", "builds"
+  add_foreign_key "build_ssds", "ssds"
   add_foreign_key "build_storages", "builds"
-  add_foreign_key "build_storages", "storages"
+  add_foreign_key "build_storages", "hdds", column: "storage_id"
 end

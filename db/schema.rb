@@ -181,9 +181,9 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
   end
 
   create_table "mobos", force: :cascade do |t|
-    t.string "socket_cpu", array: true
+    t.string "socket_cpu"
     t.string "form_factor"
-    t.integer "max_memory"
+    t.string "max_memory"
     t.integer "memory_slots"
     t.string "color"
     t.string "rating"
@@ -192,14 +192,14 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "image"
-    t.string "supported_memory"
+    t.string "supported_memory", array: true
   end
 
   create_table "psus", force: :cascade do |t|
     t.string "form_factor"
-    t.integer "efficiency_rating"
-    t.integer "wattage"
-    t.boolean "modular"
+    t.string "efficiency_rating"
+    t.string "wattage"
+    t.string "modular"
     t.string "color"
     t.string "rating"
     t.float "price"
@@ -211,9 +211,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
 
   create_table "rams", force: :cascade do |t|
     t.string "speed"
-    t.string "module"
     t.integer "latency"
-    t.integer "quantity"
     t.string "color"
     t.string "rating"
     t.float "price"
@@ -222,6 +220,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
     t.string "name"
     t.string "image"
     t.string "memory_type"
+    t.string "memory_size"
   end
 
   create_table "ssd_tables", force: :cascade do |t|

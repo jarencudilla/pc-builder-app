@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_134614) do
+ActiveRecord::Schema.define(version: 2021_07_20_033542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -227,7 +227,6 @@ ActiveRecord::Schema.define(version: 2021_07_19_134614) do
     t.string "name"
     t.string "image"
     t.string "capacity"
-    t.string "type"
     t.string "form_factor"
     t.string "nand_flash"
     t.string "interface"

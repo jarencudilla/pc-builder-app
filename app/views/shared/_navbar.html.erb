@@ -11,15 +11,16 @@
         <%= link_to 'Build', builds_path, class:"nav-link text-white" %>
       </li>
 
-      <div class="right-profile">
+      <li class="right-profile">
         <a class="username"><%= current_user.username %></a>
 
         <div class="dropdown-menu">
-          <div class="flex flex-col">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"px-2 py-2 hover:underline eli-field-menu" %>
-          </div>
+          <ul>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %><br /></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+          </ul>
         </div>
-      </div>
+      </li>
 
     <% else %>
       <li class="nav-li">

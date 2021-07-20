@@ -1,6 +1,10 @@
 require 'kimurai'
 require 'webdrivers'
 
+Kimurai.configure do |config|
+  config.selenium_firefox_path = ENV["FIREFOX_BIN"].presence || "/usr/bin/firefox-browser"
+end
+
 class Scraper < Kimurai::Base
   @engine = :selenium_firefox
   @config = { before_request: {

@@ -6,7 +6,7 @@
   --fs-h1: 2.2rem;
   --fs-h2: 1.8rem;
   --fs-h3: 1.5rem;
-  --fs-body: 1.2rem;
+  --fs-body: 1.1rem;
   --fs-label: 1rem;
 
   --clr-light: rgb(248, 248, 248);
@@ -47,15 +47,19 @@ h3 {
   font-size: var(--fs-h3);
 }
 
+a,
 p {
   font-size: var(--fs-body);
   line-height: 1.5;
 }
 
-a,
 label,
 ::placeholder {
   font-size: var(--fs-label);
+}
+
+em {
+  font-size: 0.825rem;
 }
 
 *,
@@ -81,4 +85,23 @@ body {
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align-items;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: var(--bs);
+  // background-color: var(--clr-light);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--clr-accent4);
+
+  &:hover {
+    background-color: var(--clr-accent3);
+  }
 }

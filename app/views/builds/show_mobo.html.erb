@@ -1,0 +1,17 @@
+<div>
+<% @mobos.each do |mobo| %>
+    <p>
+        <h3>Image</h3><%= mobo.image %>
+        <h3>Motherboard</h3><%= mobo.name %>
+        <h3>Socket/CPU</h3><%= mobo.socket_cpu %>
+        <h3>Memory Slot</h3><%= mobo.memory_slots %>
+        <h3>Max Memory</h3><%= mobo.max_memory %>
+        <h3>Core Clock</h3><%= mobo.core_clock %>
+        <h3>Boost Clock</h3><%= mobo.boost_clock %>
+        <h3>TDP</h3><%= mobo.tdp %>
+        
+        <h3>Supported Memory</h3><%= mobo.supported_memory %>
+        <h3>Price</h3><%= mobo.price %>
+    </p>
+<% end %>
+</div>

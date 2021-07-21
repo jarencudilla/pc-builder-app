@@ -94,11 +94,11 @@ body {
 ::-webkit-scrollbar-track {
   border-radius: 5px;
   box-shadow: var(--bs);
-  // background-color: var(--clr-light);
+  background-color: var(--clr-darkest);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: var(--clr-accent4);
 
   &:hover {

@@ -19,29 +19,6 @@ i {
   cursor: pointer;
 }
 
-/*home*/
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-}
-
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 3rem;
-}
-
-li {
-  list-style: none;
-}
-/*home*/
-
 /* build-table */
 .table {
   display: flex;

@@ -17,7 +17,7 @@
   --clr-accent: #0f89ca;
   --clr-accent2: #1a578f;
 
-  --clr-accent3: #91c13e;
+  --clr-accent3: seagreen;
   --clr-accent4: #22af4b;
 
   --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.2),
@@ -77,7 +77,7 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--clr-darker);
+  background-color: var(--clr-light);
 }
 
 @mixin flexCenter($direction, $justify, $align-items) {

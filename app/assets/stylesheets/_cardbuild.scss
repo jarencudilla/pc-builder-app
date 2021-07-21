@@ -2,7 +2,7 @@
 
 /*card build for home index*/
 .card_title {
-  color: white;
+  color: var(--clr-darker);
   width: 100%;
   margin-top: 3rem;
   @include flexCenter(row, center, center);
@@ -20,7 +20,8 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 25rem;
-  border: .3rem solid var(--clr-darkest);
+  box-shadow: var(--bs);
+  border-radius: 5px;
   @include flexCenter(column, center, center);
 }
 

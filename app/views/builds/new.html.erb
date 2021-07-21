@@ -40,6 +40,41 @@
         <%= f.label "CPU Fan" %><br />
         <%= f.collection_select :cpu_fan_id, CpuFan.order(:name), :id, :name, include_blank: true %>
       </div>
+
+      <%= f.fields_for :build_case_fans do |g| %>
+        <div class="field">
+          <%= g.label :name, "Case Fan(s)" %>
+          <%= g.collection_select :case_fan_id, CaseFan.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+      
+      <%= f.fields_for :build_gpus do |g| %>
+        <div class="field">
+          <%= g.label :name, "GPU(s)" %>
+          <%= g.collection_select :gpu_id, Gpu.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_hdds do |g| %>
+        <div class="field">
+          <%= g.label :name, "HDD(s)" %>
+          <%= g.collection_select :hdd_id, Hdd.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_rams do |g| %>
+        <div class="field">
+          <%= g.label :name, "RAM(s)" %>
+          <%= g.collection_select :ram_id, Ram.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_ssds do |g| %>
+        <div class="field">
+          <%= g.label :name, "SSD(s)" %>
+          <%= g.collection_select :ssd_id, Ssd.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
     
       <div class="actions">
         <%= f.submit "Create Build" %>

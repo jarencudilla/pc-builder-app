@@ -9,9 +9,12 @@
 
   .brand {
     padding: 0.3rem 1rem;
-    background: -webkit-linear-gradient(var(--clr-light), var(--clr-accent4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+    &:hover {
+      background: -webkit-linear-gradient(var(--clr-light), var(--clr-accent4));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   a {
@@ -56,21 +59,21 @@
       &:hover .dropdown-menu {
         display: block;
       }
-    }
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      padding: 1em;
-      left: -40px;
-      min-width: 140px;
-      z-index: 1;
-      background-color: var(--clr-dark);
-      border-radius: 5px;
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        padding: 1em 1.45em;
+        left: -50px;
+        min-width: 140px;
+        z-index: 1;
+        background-color: var(--clr-darkest);
+        border-radius: 5px;
 
-      ul li a {
-        display: block;
+        li {
+          padding: 0.5rem 0;
+        }
       }
     }
   }

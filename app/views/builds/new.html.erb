@@ -1,0 +1,84 @@
+<section class="form-section">
+  <div class="form-section__container">
+    <h1 class="mb-5">Make Build</h1>
+    
+    <%= form_with model: @build, url: builds_path, method: :post do |f| %>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      
+      <div class="field">
+        <%= f.label "Build Name" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "Build Name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Purpose" %><br />
+        <%= f.text_field :purpose, autofocus: true, autocomplete: "Purpose" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Motherboard" %><br />
+        <%= f.collection_select :mobo_id, Mobo.order(:name), :id, :name, include_blank: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label "CPU" %><br />
+        <%= f.collection_select :cpu_id, Cpu.order(:name), :id, :name, include_blank: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label "PSU" %><br />
+        <%= f.collection_select :psu_id, Psu.order(:name), :id, :name, include_blank: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Case" %><br />
+        <%= f.collection_select :case_id, Case.order(:name), :id, :name, include_blank: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label "CPU Fan" %><br />
+        <%= f.collection_select :cpu_fan_id, CpuFan.order(:name), :id, :name, include_blank: true %>
+      </div>
+
+      <%= f.fields_for :build_case_fans do |g| %>
+        <div class="field">
+          <%= g.label :name, "Case Fan(s)" %>
+          <%= g.collection_select :case_fan_id, CaseFan.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+      
+      <%= f.fields_for :build_gpus do |g| %>
+        <div class="field">
+          <%= g.label :name, "GPU(s)" %>
+          <%= g.collection_select :gpu_id, Gpu.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_hdds do |g| %>
+        <div class="field">
+          <%= g.label :name, "HDD(s)" %>
+          <%= g.collection_select :hdd_id, Hdd.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_rams do |g| %>
+        <div class="field">
+          <%= g.label :name, "RAM(s)" %>
+          <%= g.collection_select :ram_id, Ram.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+
+      <%= f.fields_for :build_ssds do |g| %>
+        <div class="field">
+          <%= g.label :name, "SSD(s)" %>
+          <%= g.collection_select :ssd_id, Ssd.order(:name), :id, :name, include_blank: true %>
+        </div>
+      <% end %>
+    
+      <div class="actions">
+        <%= f.submit "Create Build" %>
+      </div>
+    <% end %>
+  </div>
+</section>

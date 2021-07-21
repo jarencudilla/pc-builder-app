@@ -26,9 +26,19 @@ class BuildsController < ApplicationController
     @build = Build.new
   end
 
-  def edit; end
+  def create
 
-  def create; end
+    @build = Build.new(build_params)
+    
+    if @build.save
+      redirect_to root_path, notice: 'Build Successfully Created'
+    else
+      render :new
+    end 
+
+  end
+
+  def edit; end
 
   def update; end
 
@@ -36,7 +46,7 @@ class BuildsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:build).permit(:name, :purpose, :total_price)
+  def build_params
+    params.require(:build).permit(:name, :purpose, :user_id, :cpu_id, :mobo_id, :psu_id, :case_id, :cpu_fan_id)
   end
 end

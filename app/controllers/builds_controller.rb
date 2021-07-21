@@ -33,13 +33,12 @@ class BuildsController < ApplicationController
 
   def create
     @build = Build.new(build_params)
-    
+
     if @build.save
       redirect_to root_path, notice: 'Build Successfully Created'
     else
       render :new
-    end 
-
+    end
   end
 
   def edit; end
@@ -52,11 +51,10 @@ class BuildsController < ApplicationController
 
   def build_params
     params.require(:build).permit(:name, :purpose, :user_id, :cpu_id, :mobo_id, :psu_id, :case_id, :cpu_fan_id,
-      build_case_fans_attributes: [:id, :case_fan_id],
-      build_gpus_attributes: [:id, :gpu_id],
-      build_hdds_attributes: [:id, :hdd_id],
-      build_rams_attributes: [:id, :ram_id],
-      build_ssds_attributes: [:id, :ssd_id],
-    )
+                                  build_case_fans_attributes: %i[id case_fan_id],
+                                  build_gpus_attributes: %i[id gpu_id],
+                                  build_hdds_attributes: %i[id hdd_id],
+                                  build_rams_attributes: %i[id ram_id],
+                                  build_ssds_attributes: %i[id ssd_id])
   end
 end

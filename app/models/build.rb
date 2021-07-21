@@ -1,10 +1,10 @@
 class Build < ApplicationRecord
   belongs_to :user
-  belongs_to :cpus
-  belongs_to :mobos
-  belongs_to :psus
-  belongs_to :cases
-  belongs_to :cpu_fans
+  belongs_to :cpu
+  belongs_to :mobo
+  belongs_to :psu
+  belongs_to :case
+  belongs_to :cpu_fan
 
   has_many :build_gpus, dependent: :destroy
   has_many :gpus, through: :build_gpus

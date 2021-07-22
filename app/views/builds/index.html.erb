@@ -3,7 +3,18 @@
 
 <div class="container", style="width: 40vw; height: auto; text-align: center">
   <div>
-    <%= button_to 'Choose a CPU' %>
+    Estimated Wattage : 
+  </div>
+
+
+  <div>
+    <h2>Choose a CPU</h2>
+<p>Would you go <%= link_to "Intel", render: 'parts/cpu_intel' %> or <%= link_to "AMD", render: 'parts/cpu_amd' %>?</p>
+
+Intel CPUs have good performance also have higher base clocks but at the cost of higher power consumption and has a premuim price tag.
+
+AMD CPUs are cheaper than their Intel counterparts and is more efficient especially for gaming and other heavy workloads like video editing and 
+
 Note: Some CPUs already have an included stock fan
   </div>
   <div>
@@ -37,6 +48,8 @@ Note: Check the estimated wattage on the top of this current build to ensure tha
 </div>
 <div class="container", style="width: 60vw; height: auto;">
 <%= render 'parts/cpu' %>
+<%= render 'parts/cpu_intel' %>
+<%= render 'parts/cpu_amd' %>
 <%= render 'parts/cpu_fan' %>
 <%= render 'parts/mobos' %>
 <%= render 'parts/gpu' %>

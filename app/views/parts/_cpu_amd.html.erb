@@ -1,0 +1,36 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>AMD CPUs</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Socket</th>
+        <th>Max Memory</th>
+        <th>Core Count</th>
+        <th>Core Clock</th>
+        <th>Boost Clock</th>
+        <th>TDP</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @cpus = @cpus.select{ |cpu| cpu.socket.include?("AM4") } %>
+      <% @cpus.take(10).each do |cpu| %>
+        <tr>
+          <td><%= image_tag cpu.image, style: 'height:50px;width:auto;' %></td>
+          <td><%= cpu.name.to_s.truncate(23) %></td>
+          <td><%= cpu.socket %></td>
+          <td><%= cpu.max_memory %></td>
+          <td><%= cpu.core_count %></td>
+          <td><%= cpu.core_clock %></td>
+          <td><%= cpu.boost_clock %></td>
+          <td><%= cpu.tdp %></td>
+          <td><%= cpu.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,33 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>SSDs</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>Form Factor</th>
+        <th>Nand Flash</th>
+        <th>Interface</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @rams.each do |ram| %>
+        <tr>
+          <td><%= ram.image %></td>
+          <td><%= ram.name %></td>
+          <td><%= ram.capacity %></td>
+          <td><%= ram.form_factor %></td>
+          <td><%= ram.nand_flash %></td>
+          <td><%= ram.interface %></td>
+          <td><%= ram.rating %></td>
+          <td><%= ram.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

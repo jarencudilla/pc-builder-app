@@ -12,14 +12,13 @@
       </li>
 
       <li class="right-profile">
-        <a class="username"><%= current_user.username %></a>
+        <a class="username"><%= current_user.username.capitalize %></a>
 
-        <div class="dropdown-menu">
-          <ul>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path %><br /></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </div>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %><br /></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+
       </li>
 
     <% else %>

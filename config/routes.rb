@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root "home#index"
 
-  # resources :builds
+resources :builds do
+  resources :cpus
+  resources :mobos
+  resources :cpu_fans
+  resources :gpus
+end
 
   get 'builds/cpu' => 'builds#cpu', as: 'cpu'
   get 'builds/mobo' => 'builds#mobo', as: 'mobo'

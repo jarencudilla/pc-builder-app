@@ -12,25 +12,21 @@
         <th>Core Clock</th>
         <th>Boost Clock</th>
         <th>TDP</th>
-        <th>SMT</th>
-        <th>Rating</th>
         <th>Price</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @cpus.each do |cpu| %>
+      <% @cpus.take(10).each do |cpu| %>
         <tr>
-          <td><%= cpu.image %></td>
-          <td><%= cpu.name %></td>
+          <td><%= image_tag cpu.image, style: 'height:50px;width:auto;' %></td>
+          <td><%= cpu.name.to_s.truncate(23) %></td>
           <td><%= cpu.socket %></td>
           <td><%= cpu.max_memory %></td>
           <td><%= cpu.core_count %></td>
           <td><%= cpu.core_clock %></td>
           <td><%= cpu.boost_clock %></td>
           <td><%= cpu.tdp %></td>
-          <td><%= cpu.smt %></td>
-          <td><%= cpu.rating %></td>
           <td><%= cpu.price %></td>
         </tr>
       <%end%>

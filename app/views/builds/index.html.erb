@@ -1,46 +1,49 @@
 <h1>System Builder</h1>
 <p>Choose what parts you want, but there will always be compatible part for every component you pick.</p>
 
-<div>
-  <%= button_to 'Choose a CPU'  %>
-
+<div class="container", style="width: 40vw; height: auto; text-align: center">
+  <div>
+    <%= button_to 'Choose a CPU' %>
 Note: Some CPUs already have an included stock fan
-</div>
-
-<div>
-  <%= button_to 'Choose a CPU Fan' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a Motherboard' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a Graphics Card' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a RAM kit' %>
-</div>
-
-<div>
-  What storage do you want to pick?
-  <%= button_to 'Choose a Hard Disk Drive' %> | <%= button_to 'Choose a Solid State Drive' %>
-  
-</div>
-
-<div>
-  <%= button_to 'Choose a Case' %>
-
+  </div>
+  <div>
+    <%= button_to 'Choose a CPU Fan' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a Motherboard' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a Graphics Card' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a RAM kit' %>
+  </div>
+  <div>
+What storage do you want to pick?
+    <%= button_to 'Choose a Hard Disk Drive' %> OR <%= button_to 'Choose a Solid State Drive' %>
+Note: We recommend a SSD for your main boot drive and get a HDD with large capacity for your storage and media library.
+  </div>
+  <div>
+    <%= button_to 'Choose a Case' %>
 Note: Some Cases include a Power Supply and Case Fans
-</div>
-
-<div>
-  <%= button_to 'Choose a Power Supply' %>
-
+  </div>
+  <div>
+    <%= button_to 'Choose a Power Supply' %>
 Note: Check the estimated wattage on the top of this current build to ensure that you pick the correct PSU to power your build.
+  </div>
+  <div>
+    <%= button_to 'Choose a Case Fan' %>
+  </div>
 </div>
-
-<div>
-  <%= button_to 'Choose a Case Fan' %>
+<div class="container", style="width: 60vw; height: auto;">
+<%= render 'parts/cpu' %>
+<%= render 'parts/cpu_fan' %>
+<%= render 'parts/mobos' %>
+<%= render 'parts/gpu' %>
+<%= render 'parts/ram' %>
+<%= render 'parts/hdd' %>
+<%= render 'parts/ssd' %>
+<%= render 'parts/case' %>
+<%= render 'parts/psu' %>
+<%= render 'parts/case_fan' %>
 </div>

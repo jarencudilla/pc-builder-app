@@ -10,26 +10,22 @@
         <th>Color</th>
         <th>Rpm</th>
         <th>Airflow</th>
-        <th>Noise Level</th>
-        <th>PWM</th>
-        <th>Rating</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @case_fans.each do |casefan| %>
+      <% @case_fans.take(10).each do |casefan| %>
         <tr>
-          <td><%= casefan.image %></td>
-          <td><%= casefan.name %></td>
+          <td><%= image_tag casefan.image, style: "height:50px;width:auto;" %></td>
+          <td><%= casefan.name.to_s.truncate(28) %></td>
           <td><%= casefan.size %></td>
           <td><%= casefan.color %></td>
           <td><%= casefan.rpm %></td>
           <td><%= casefan.airflow %></td>
-          <td><%= casefan.noise_level %></td>
-          <td><%= casefan.pwm %></td>
-          <td><%= casefan.rating %></td>
           <td><%= casefan.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

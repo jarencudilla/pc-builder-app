@@ -10,24 +10,22 @@
         <th>Efficiency Rating</th>
         <th>Wattage</th>
         <th>Modular</th>
-        <th>Color</th>
-        <th>Rating</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @psus.each do |psu| %>
+      <% @psus.take(10).each do |psu| %>
         <tr>
-          <td><%= psu.image %></td>
-          <td><%= psu.name %></td>
+          <td><%= image_tag psu.image, style: "height:50px;width:auto;" %></td>
+          <td><%= psu.name.to_s.truncate(28) %></td>
           <td><%= psu.form_factor %></td>
           <td><%= psu.efficiency_rating %></td>
           <td><%= psu.wattage %></td>
           <td><%= psu.modular %></td>
-          <td><%= psu.color %></td>
-          <td><%= psu.rating %></td>
           <td><%= psu.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

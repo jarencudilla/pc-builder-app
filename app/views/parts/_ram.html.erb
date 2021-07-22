@@ -8,26 +8,24 @@
         <th>Name</th>
         <th>Speed</th>
         <th>Latency</th>
-        <th>Color</th>
-        <th>Rating</th>
         <th>Memory Type</th>
         <th>Memory Size</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @rams.each do |ram| %>
+      <% @rams.take(10).each do |ram| %>
         <tr>
-          <td><%= ram.image %></td>
-          <td><%= ram.name %></td>
+          <td><%= image_tag ram.image, style: "height:50px;width:auto;" %></td>
+          <td><%= ram.name.to_s.truncate(30) %></td>
           <td><%= ram.speed %></td>
           <td><%= ram.latency %></td>
-          <td><%= ram.color %></td>
-          <td><%= ram.rating %></td>
           <td><%= ram.memory_type %></td>
           <td><%= ram.memory_size %></td>
           <td><%= ram.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

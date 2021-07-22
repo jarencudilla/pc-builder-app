@@ -1,0 +1,35 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Hard Drives</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>RPM</th>
+        <th>Cache</th>
+        <th>Form Factor</th>
+        <th>Interface</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @hdds.each do |h| %>
+        <tr>
+          <td><%= h.image %></td>
+          <td><%= h.name %></td>
+          <td><%= h.capacity %></td>
+          <td><%= h.rpm %></td>
+          <td><%= h.cache %></td>
+          <td><%= h.form_factor %></td>
+          <td><%= h.interface %></td>
+          <td><%= h.rating %></td>
+          <td><%= h.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

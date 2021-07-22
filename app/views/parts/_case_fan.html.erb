@@ -1,0 +1,37 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Case Fans</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Rpm</th>
+        <th>Airflow</th>
+        <th>Noise Level</th>
+        <th>PWM</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @case_fans.each do |casefan| %>
+        <tr>
+          <td><%= casefan.image %></td>
+          <td><%= casefan.name %></td>
+          <td><%= casefan.size %></td>
+          <td><%= casefan.color %></td>
+          <td><%= casefan.rpm %></td>
+          <td><%= casefan.airflow %></td>
+          <td><%= casefan.noise_level %></td>
+          <td><%= casefan.pwm %></td>
+          <td><%= casefan.rating %></td>
+          <td><%= casefan.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

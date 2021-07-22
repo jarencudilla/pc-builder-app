@@ -11,6 +11,7 @@
         <th>Radiator Size</th>
         <th>Supported Socket</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
@@ -27,6 +28,7 @@
           <%= a.to_s.gsub(/[@\[\]"]/, "") %>
           <%end%></td>
           <td><%= c.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

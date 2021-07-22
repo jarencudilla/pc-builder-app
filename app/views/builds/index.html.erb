@@ -11,9 +11,9 @@
     <h2>Choose a CPU</h2>
 <p>Would you go <%= link_to "Intel", render: 'parts/cpu_intel' %> or <%= link_to "AMD", render: 'parts/cpu_amd' %>?</p>
 
-Intel CPUs have good performance also have higher base clocks but at the cost of higher power consumption and has a premuim price tag.
+<p>Intel CPUs have good performance also have higher base clocks but at the cost of higher power consumption and has a premuim price tag.</p>
 
-AMD CPUs are cheaper than their Intel counterparts and is more efficient especially for gaming and other heavy workloads like video editing and 
+<p>AMD CPUs are cheaper than their Intel counterparts and is more efficient especially for gaming and other heavy workloads like video editing and programming.</P>
 
 Note: Some CPUs already have an included stock fan
   </div>
@@ -47,9 +47,12 @@ Note: Check the estimated wattage on the top of this current build to ensure tha
   </div>
 </div>
 <div class="container", style="width: 60vw; height: auto;">
-<%= render 'parts/cpu' %>
+<% if @cpus = @cpus.select{ |cpu| cpu.socket.include?("LGA1151") }%>
 <%= render 'parts/cpu_intel' %>
+<% else %>
 <%= render 'parts/cpu_amd' %>
+<% end %>
+
 <%= render 'parts/cpu_fan' %>
 <%= render 'parts/mobos' %>
 <%= render 'parts/gpu' %>

@@ -44,5 +44,4 @@ class BuildsController < ApplicationController
   def cpu_fan
     @cpu_fans = Cpu_fan.all
   end
-
 end

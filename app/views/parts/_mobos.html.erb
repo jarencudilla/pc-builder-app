@@ -1,0 +1,35 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Motherboards</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Form Factor</th>
+        <th>Socket</th>
+        <th>Max Memory</th>
+        <th>Memory Slots</th>
+        <th>Color</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @mobos.each do |mobo| %>
+        <tr>
+          <td><%= mobo.image %></td>
+          <td><%= mobo.name %></td>
+          <td><%= mobo.form_factor %></td>
+          <td><%= mobo.socket_cpu %></td>
+          <td><%= mobo.max_memory %></td>
+          <td><%= mobo.memory_slots %></td>
+          <td><%= mobo.color %></td>
+          <td><%= mobo.rating %></td>
+          <td><%= mobo.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

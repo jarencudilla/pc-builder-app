@@ -1,0 +1,35 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Power Supplies</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Form Factor</th>
+        <th>Efficiency Rating</th>
+        <th>Wattage</th>
+        <th>Modular</th>
+        <th>Color</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @psus.each do |psu| %>
+        <tr>
+          <td><%= psu.image %></td>
+          <td><%= psu.name %></td>
+          <td><%= psu.form_factor %></td>
+          <td><%= psu.efficiency_rating %></td>
+          <td><%= psu.wattage %></td>
+          <td><%= psu.modular %></td>
+          <td><%= psu.color %></td>
+          <td><%= psu.rating %></td>
+          <td><%= psu.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

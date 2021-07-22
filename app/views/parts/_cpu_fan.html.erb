@@ -1,0 +1,39 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Case Fans</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>RPM</th>
+        <th>Noise Level</th>
+        <th>Radiator Size</th>
+        <th>Color</th>
+        <th>Rating</th>
+        <th>Supported Socket</th>
+        <th>Height</th>
+        <th>Rating</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cpu_fans.each do |c| %>
+        <tr>
+          <td><%= c.image %></td>
+          <td><%= c.name %></td>
+          <td><%= c.fan_rpm %></td>
+          <td><%= c.noise_level %></td>
+          <td><%= c.radiator_size %></td>
+          <td><%= c.color %></td>
+          <td><%= c.rating %></td>
+          <td><%= c.supported_socket %></td>
+          <td><%= c.height %></td>
+          <td><%= c.rating %></td>
+          <td><%= c.price %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

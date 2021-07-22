@@ -1,52 +1,46 @@
-<section class="table">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>CPU</th>
-        <th>Motherboard</th>
-        <th>GPU</th>
-        <th>PSU</th>
-        <th>RAM</th>
-        <th>Storage</th>
-        <th>Case</th>
-        <th>Case Fan</th>
-        <th>CPU Fan</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+<h1>System Builder</h1>
+<p>Choose what parts you want, but there will always be compatible part for every component you pick.</p>
+
+<div>
+  <%= button_to 'Choose a CPU'  %>
+
+Note: Some CPUs already have an included stock fan
+</div>
+
+<div>
+  <%= button_to 'Choose a CPU Fan' %>
+</div>
+
+<div>
+  <%= button_to 'Choose a Motherboard' %>
+</div>
+
+<div>
+  <%= button_to 'Choose a Graphics Card' %>
+</div>
+
+<div>
+  <%= button_to 'Choose a RAM kit' %>
+</div>
+
+<div>
+  What storage do you want to pick?
+  <%= button_to 'Choose a Hard Disk Drive' %> | <%= button_to 'Choose a Solid State Drive' %>
+  
+</div>
+
+<div>
+  <%= button_to 'Choose a Case' %>
+
+Note: Some Cases include a Power Supply and Case Fans
+</div>
+
+<div>
+  <%= button_to 'Choose a Power Supply' %>
+
+Note: Check the estimated wattage on the top of this current build to ensure that you pick the correct PSU to power your build.
+</div>
+
+<div>
+  <%= button_to 'Choose a Case Fan' %>
+</div>

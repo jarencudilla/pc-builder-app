@@ -12,67 +12,71 @@
       </div>
 
       <div class="field">
-        <%= f.label "Purpose" %><br />
-        <%= f.text_field :purpose, autofocus: true, autocomplete: "Purpose" %>
-      </div>
-
-      <div class="field">
-        <%= f.label "Motherboard" %><br />
-        <%= f.collection_select :mobo_id, Mobo.order(:name), :id, :name, include_blank: true %>
+        <%= f.label "Motherboard" %><br /> <%= f.text_field '', value: @mobo.name %>
+        <%= f.hidden_field :mobo_id, value: @mobo.id %>
       </div>
 
       <div class="field">
         <%= f.label "CPU" %><br />
-        <%= f.collection_select :cpu_id, Cpu.order(:name), :id, :name, include_blank: true %>
+        <%= f.text_field '', value: @cpu.name %>
+        <%= f.hidden_field :cpu_id, value: @cpu.id %>
       </div>
 
       <div class="field">
         <%= f.label "PSU" %><br />
-        <%= f.collection_select :psu_id, Psu.order(:name), :id, :name, include_blank: true %>
+          <%= f.text_field '', value: @psu.name %>
+        <%= f.hidden_field :psu_id, value: @psu.id %>
       </div>
 
       <div class="field">
         <%= f.label "Case" %><br />
-        <%= f.collection_select :case_id, Case.order(:name), :id, :name, include_blank: true %>
+          <%= f.text_field '', value: @case.name %>
+        <%= f.hidden_field :case_id, value: @case.id %>
       </div>
 
       <div class="field">
         <%= f.label "CPU Fan" %><br />
-        <%= f.collection_select :cpu_fan_id, CpuFan.order(:name), :id, :name, include_blank: true %>
+          <%= f.text_field '', value: @cpu_fan.name %>
+        <%= f.hidden_field :cpu_fan_id, value: @cpu_fan.id %>
       </div>
 
       <%= f.fields_for :build_case_fans do |g| %>
         <div class="field">
           <%= g.label :name, "Case Fan(s)" %><br />
-          <%= g.collection_select :case_fan_id, CaseFan.order(:name), :id, :name, include_blank: true %>
+          <%= g.text_field '', value: @case_fan.name %>
+          <%= g.hidden_field :case_fan_id, value: @case_fan.id%>
         </div>
       <% end %>
       
       <%= f.fields_for :build_gpus do |g| %>
         <div class="field">
           <%= g.label :name, "GPU(s)" %><br />
-          <%= g.collection_select :gpu_id, Gpu.order(:name), :id, :name, include_blank: true %>
+          <%= g.text_field '', value: @gpu.name %>
+          <%= g.hidden_field :gpu_id, value: @gpu.id %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_hdds do |g| %>
         <div class="field">
           <%= g.label :name, "HDD(s)" %><br />
-          <%= g.collection_select :hdd_id, Hdd.order(:name), :id, :name, include_blank: true %>
+          <%= g.text_field '', value: @hdd.name %>
+          <%= g.hidden_field :hdd_id, value: @hdd.id %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_rams do |g| %>
         <div class="field">
           <%= g.label :name, "RAM(s)" %><br />
-          <%= g.collection_select :ram_id, Ram.order(:name), :id, :name, include_blank: true %>
+          <%= g.text_field '', value: @ram.name %>
+          <%= g.hidden_field :ram_id, value: @ram.id %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_ssds do |g| %>
         <div class="field">
           <%= g.label :name, "SSD(s)" %><br />
-          <%= g.collection_select :ssd_id, Ssd.order(:name), :id, :name, include_blank: true %>
+          <%= g.text_field '', value: @ssd.name %>
+          <%= g.hidden_field :ssd_id, value: @ssd.id %>
         </div>
       <% end %>
     

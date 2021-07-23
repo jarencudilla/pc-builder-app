@@ -16,7 +16,6 @@
     </thead>
 
     <tbody>
-    <% @cpu_fans = @cpu_fans.select{ |cpu_fan| cpu_fan.supported_socket.include?("AM4") } %>
       <% @cpu_fans.take(10).each do |c| %>
         <tr>
           <td><%= image_tag c.image, style: 'height:50px;width:auto;' %></td>
@@ -24,11 +23,19 @@
           <td><%= c.fan_rpm %></td>
           <td><%= c.noise_level %></td>
           <td><%= c.radiator_size %></td>
-          <td><% c.supported_socket.each do |a| %>
-          <%= a.to_s.gsub(/[@\[\]"]/, "") %>
-          <%end%></td>
+          <td><% c.supported_socket %></td>
           <td><%= c.price %></td>
-          <td><%= button_to "Add", {}, class:'add-button' %></td>
+          <td><%= link_to "Add", new_build_path(cpu_id: @cpu.id, 
+                                      mobo_id: @mobo.id,
+                                      ram_id: @ram.id,
+                                      ssd_id: @ssd.id,
+                                      hdd_id: @hdd.id,
+                                      gpu_id: @gpu.id,
+                                      psu_id: @psu.id,
+                                      case_id: @case.id,
+                                      case_fan_id: @case_fan.id,
+                                      cpu_fan_id: c.id), 
+                                      class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

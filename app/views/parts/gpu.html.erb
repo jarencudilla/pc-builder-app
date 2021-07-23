@@ -1,0 +1,41 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Graphic Cards</Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Chipset</th>
+        <th>Core Clock</th>
+        <th>Boost Clock</th>
+        <th>Memory Size</th>
+        <th>Memory Type</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @gpus.take(10).each do |gpu| %>
+        <tr>
+          <td><%= image_tag gpu.image, style: "height:50px;width:auto;"  %></td>
+          <td><%= gpu.name.to_s.truncate(20) %></td>
+          <td><%= gpu.chipset %></td>
+          <td><%= gpu.core_clock %></td>
+          <td><%= gpu.boost_clock %></td>
+          <td><%= gpu.memory_size %></td>
+          <td><%= gpu.memory_type %></td>
+          <td><%= gpu.price %></td>
+          <td><%= link_to "Add", psu_path(cpu_id: @cpu.id, 
+                                          mobo_id: @mobo.id,
+                                          ram_id: @ram.id,
+                                          ssd_id: @ssd.id,
+                                          hdd_id: @hdd.id,
+                                          gpu_id: gpu.id),
+                                          class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

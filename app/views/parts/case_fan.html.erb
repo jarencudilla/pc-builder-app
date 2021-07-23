@@ -25,7 +25,16 @@
           <td><%= casefan.rpm %></td>
           <td><%= casefan.airflow %></td>
           <td><%= casefan.price %></td>
-          <td><%= button_to "Add", {}, class:'add-button' %></td>
+          <td><%= link_to "Add", cpu_fan_path(cpu_id: @cpu.id, 
+                                              mobo_id: @mobo.id,
+                                              ram_id: @ram.id,
+                                              ssd_id: @ssd.id,
+                                              hdd_id: @hdd.id,
+                                              gpu_id: @gpu.id,
+                                              psu_id: @psu.id,
+                                              case_id: @case.id,
+                                              case_fan_id: casefan.id), 
+                                              class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

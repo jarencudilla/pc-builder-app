@@ -4,20 +4,20 @@ Rails.application.routes.draw do
   root "home#index"
 
 resources :builds do
-  resources :cpus
-  resources :mobos
-  resources :cpu_fans
-  resources :gpus
+  #resources :cpus
+  # resources :mobos
+  # resources :cpu_fans
+  # resources :gpus
 end
 
-  get 'builds/cpu' => 'builds#cpu', as: 'cpu'
-  get 'builds/mobo' => 'builds#mobo', as: 'mobo'
-  get 'builds/case' => 'builds#case', as: 'case'
-  get 'builds/gpu' => 'builds#gpu', as: 'gpu'
-  get 'builds/hdd' => 'builds#hdd', as: 'hdd'
-  get 'builds/psu' => 'builds#psu', as: 'psu'
-  get 'builds/ram' => 'builds#ram', as: 'ram'
-  get 'builds/ssd' => 'builds#ssd', as: 'ssd'
-  get 'builds/case_fan' => 'builds#case_fan', as: 'case_fan'
-  get 'builds/cpu_fan' => 'builds#cpu_fan', as: 'cpu_fan'
+  get 'parts/cpu' => 'parts#cpu', as: 'cpu'
+  get 'parts/mobo' => 'parts#mobo', as: 'mobo'
+  get 'parts/case' => 'parts#case', as: 'case'
+  get 'parts/gpu' => 'parts#gpu', as: 'gpu'
+  get 'parts/hdd' => 'parts#hdd', as: 'hdd'
+  get 'parts/psu' => 'parts#psu', as: 'psu'
+  get 'parts/ram' => 'parts#ram', as: 'ram'
+  get 'parts/ssd' => 'parts#ssd', as: 'ssd'
+  get 'parts/case_fan' => 'parts#case_fan', as: 'case_fan'
+  get 'parts/cpu_fan' => 'parts#cpu_fan', as: 'cpu_fan'
 end

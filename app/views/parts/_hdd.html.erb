@@ -11,23 +11,23 @@
         <th>Cache</th>
         <th>Form Factor</th>
         <th>Interface</th>
-        <th>Rating</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @hdds.each do |h| %>
+      <% @hdds.take(10).each do |h| %>
         <tr>
-          <td><%= h.image %></td>
-          <td><%= h.name %></td>
+          <td><%= image_tag h.image, style: "height:50px;width:auto;" %></td>
+          <td><%= h.name.to_s.truncate(28) %></td>
           <td><%= h.capacity %></td>
           <td><%= h.rpm %></td>
           <td><%= h.cache %></td>
           <td><%= h.form_factor %></td>
           <td><%= h.interface %></td>
-          <td><%= h.rating %></td>
           <td><%= h.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

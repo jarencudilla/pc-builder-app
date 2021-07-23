@@ -1,6 +1,6 @@
 <section class="table-container">
   <table class="table">
-    <Caption>CPUs</Caption>
+    <Caption>AMD CPUs</Caption>
 
     <thead>  
       <tr>
@@ -13,10 +13,12 @@
         <th>Boost Clock</th>
         <th>TDP</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
+    <% @cpus = @cpus.select{ |cpu| cpu.socket.include?("AM4") } %>
       <% @cpus.take(10).each do |cpu| %>
         <tr>
           <td><%= image_tag cpu.image, style: 'height:50px;width:auto;' %></td>
@@ -28,6 +30,7 @@
           <td><%= cpu.boost_clock %></td>
           <td><%= cpu.tdp %></td>
           <td><%= cpu.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

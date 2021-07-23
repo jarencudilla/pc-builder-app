@@ -12,20 +12,22 @@
         <th>Interface</th>
         <th>Rating</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @rams.each do |ram| %>
+      <% @ssds.take(10).each do |ssd| %>
         <tr>
-          <td><%= ram.image %></td>
-          <td><%= ram.name %></td>
-          <td><%= ram.capacity %></td>
-          <td><%= ram.form_factor %></td>
-          <td><%= ram.nand_flash %></td>
-          <td><%= ram.interface %></td>
-          <td><%= ram.rating %></td>
-          <td><%= ram.price %></td>
+          <td><%= image_tag ssd.image, style: "height:50px;width:auto;" %></td>
+          <td><%= ssd.name.to_s.truncate(28) %></td>
+          <td><%= ssd.capacity %></td>
+          <td><%= ssd.form_factor %></td>
+          <td><%= ssd.nand_flash %></td>
+          <td><%= ssd.interface %></td>
+          <td><%= ssd.rating %></td>
+          <td><%= ssd.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

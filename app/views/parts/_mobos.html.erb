@@ -10,24 +10,22 @@
         <th>Socket</th>
         <th>Max Memory</th>
         <th>Memory Slots</th>
-        <th>Color</th>
-        <th>Rating</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @mobos.each do |mobo| %>
+      <% @mobos.take(10).each do |mobo| %>
         <tr>
-          <td><%= mobo.image %></td>
-          <td><%= mobo.name %></td>
+          <td><%= image_tag mobo.image, style: "height:50px;width:auto;" %></td>
+          <td><%= mobo.name.to_s.truncate(18) %></td>
           <td><%= mobo.form_factor %></td>
           <td><%= mobo.socket_cpu %></td>
           <td><%= mobo.max_memory %></td>
           <td><%= mobo.memory_slots %></td>
-          <td><%= mobo.color %></td>
-          <td><%= mobo.rating %></td>
           <td><%= mobo.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

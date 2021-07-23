@@ -9,29 +9,25 @@
         <th>Chipset</th>
         <th>Core Clock</th>
         <th>Boost Clock</th>
-        <th>Color</th>
-        <th>length</th>
-        <th>Rating Socket</th>
         <th>Memory Size</th>
         <th>Memory Type</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @gpus.each do |g| %>
+      <% @gpus.take(10).each do |g| %>
         <tr>
-          <td><%= g.image %></td>
-          <td><%= g.name %></td>
+          <td><%= image_tag g.image, style: "height:50px;width:auto;"  %></td>
+          <td><%= g.name.to_s.truncate(20) %></td>
           <td><%= g.chipset %></td>
           <td><%= g.core_clock %></td>
           <td><%= g.boost_clock %></td>
-          <td><%= g.color %></td>
-          <td><%= g.length %></td>
-          <td><%= g.rating %></td>
           <td><%= g.memory_size %></td>
           <td><%= g.memory_type %></td>
           <td><%= g.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

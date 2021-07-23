@@ -1,46 +1,65 @@
 <h1>System Builder</h1>
 <p>Choose what parts you want, but there will always be compatible part for every component you pick.</p>
 
-<div>
-  <%= button_to 'Choose a CPU'  %>
+<div class="container", style="width: 40vw; height: auto; text-align: center">
+  <div>
+    Estimated Wattage : 
+  </div>
+
+
+  <div>
+    <h2>Choose a CPU</h2>
+<p>Would you go <%= link_to "Intel", render: 'parts/cpu_intel' %> or <%= link_to "AMD", render: 'parts/cpu_amd' %>?</p>
+
+<p>Intel CPUs have good performance also have higher base clocks but at the cost of higher power consumption and has a premuim price tag.</p>
+
+<p>AMD CPUs are cheaper than their Intel counterparts and is more efficient especially for gaming and other heavy workloads like video editing and programming.</P>
 
 Note: Some CPUs already have an included stock fan
-</div>
-
-<div>
-  <%= button_to 'Choose a CPU Fan' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a Motherboard' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a Graphics Card' %>
-</div>
-
-<div>
-  <%= button_to 'Choose a RAM kit' %>
-</div>
-
-<div>
-  What storage do you want to pick?
-  <%= button_to 'Choose a Hard Disk Drive' %> | <%= button_to 'Choose a Solid State Drive' %>
-  
-</div>
-
-<div>
-  <%= button_to 'Choose a Case' %>
-
+  </div>
+  <div>
+    <%= button_to 'Choose a CPU Fan' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a Motherboard' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a Graphics Card' %>
+  </div>
+  <div>
+    <%= button_to 'Choose a RAM kit' %>
+  </div>
+  <div>
+What storage do you want to pick?
+    <%= button_to 'Choose a Hard Disk Drive' %> OR <%= button_to 'Choose a Solid State Drive' %>
+Note: We recommend a SSD for your main boot drive and get a HDD with large capacity for your storage and media library.
+  </div>
+  <div>
+    <%= button_to 'Choose a Case' %>
 Note: Some Cases include a Power Supply and Case Fans
-</div>
-
-<div>
-  <%= button_to 'Choose a Power Supply' %>
-
+  </div>
+  <div>
+    <%= button_to 'Choose a Power Supply' %>
 Note: Check the estimated wattage on the top of this current build to ensure that you pick the correct PSU to power your build.
+  </div>
+  <div>
+    <%= button_to 'Choose a Case Fan' %>
+  </div>
 </div>
+<div class="container", style="width: 60vw; height: auto;">
+<% if @cpus = @cpus.select{ |cpu| cpu.socket.include?("LGA1151") }%>
+<%= render 'parts/cpu_intel' %>
+<% else %>
+<%= render 'parts/cpu_amd' %>
+<% end %>
 
-<div>
-  <%= button_to 'Choose a Case Fan' %>
+<%= render 'parts/cpu_fan' %>
+<%= render 'parts/mobos' %>
+<%= render 'parts/gpu' %>
+<%= render 'parts/ram' %>
+<%= render 'parts/hdd' %>
+<%= render 'parts/ssd' %>
+<%= render 'parts/case' %>
+<%= render 'parts/psu' %>
+<%= render 'parts/case_fan' %>
 </div>

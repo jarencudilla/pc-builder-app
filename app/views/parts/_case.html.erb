@@ -9,27 +9,29 @@
         <th>Form Factor</th>
         <th>Color</th>
         <th>Power Supply</th>
-        <th>Side Panel</th>
-        <th>Rating</th>
         <th>Mobo Form Factor</th>
         <th>Internal Bays</th>
         <th>Price</th>
+        <th>:)</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @cases.each do |c| %>
+      <% @cases.take(10).each do |c| %>
         <tr>
-          <td><%= c.image %></td>
-          <td><%= c.name %></td>
+          <td><%= image_tag c.image, style: "height:50px;width:auto;" %></td>
+          <td><%= c.name.to_s.truncate(28) %></td>
           <td><%= c.form_factor %></td>
           <td><%= c.color %></td>
           <td><%= c.power_supply %></td>
-          <td><%= c.side_panel_window %></td>
-          <td><%= c.rating %></td>
-          <td><%= c.motherboard_form_factor %></td>
-          <td><%= c.internal_bays %></td>
+          <td><% c.motherboard_form_factor.each do |a| %>
+          <%= a %>
+          <%end%></td>
+          <td><% c.internal_bays.each do |a| %>
+          <%= a.to_s.gsub(/[@\[\]"]/, "") %>
+          <%end%></td>
           <td><%= c.price %></td>
+          <td><%= button_to "Add to Build" %></td>
         </tr>
       <%end%>
     </tbody>

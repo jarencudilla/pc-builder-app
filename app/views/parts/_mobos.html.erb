@@ -11,7 +11,7 @@
         <th>Max Memory</th>
         <th>Memory Slots</th>
         <th>Price</th>
-        <th>:)</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -25,7 +25,7 @@
           <td><%= mobo.max_memory %></td>
           <td><%= mobo.memory_slots %></td>
           <td><%= mobo.price %></td>
-          <td><%= button_to "Add to Build" %></td>
+          <td><%= button_to "Add", {}, class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

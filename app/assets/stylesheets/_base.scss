@@ -48,7 +48,7 @@ h3 {
 }
 
 a,
-p {
+p, button, input[type="submit"] {
   font-size: var(--fs-body);
   line-height: 1.5;
 }

@@ -13,6 +13,7 @@
         <th>Boost Clock</th>
         <th>TDP</th>
         <th>Price</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -28,6 +29,7 @@
           <td><%= cpu.boost_clock %></td>
           <td><%= cpu.tdp %></td>
           <td><%= cpu.price %></td>
+          <td><%= button_to "Add", {}, class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

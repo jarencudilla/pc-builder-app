@@ -11,7 +11,7 @@
         <th>Memory Type</th>
         <th>Memory Size</th>
         <th>Price</th>
-        <th>:)</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -25,7 +25,7 @@
           <td><%= ram.memory_type %></td>
           <td><%= ram.memory_size %></td>
           <td><%= ram.price %></td>
-          <td><%= button_to "Add to Build" %></td>
+          <td><%= button_to "Add", {}, class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

@@ -12,7 +12,7 @@
         <th>Form Factor</th>
         <th>Interface</th>
         <th>Price</th>
-        <th>:)</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -27,7 +27,7 @@
           <td><%= h.form_factor %></td>
           <td><%= h.interface %></td>
           <td><%= h.price %></td>
-          <td><%= button_to "Add to Build" %></td>
+          <td><%= button_to "Add", {}, class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

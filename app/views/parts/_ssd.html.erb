@@ -12,7 +12,7 @@
         <th>Interface</th>
         <th>Rating</th>
         <th>Price</th>
-        <th>:)</th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -27,7 +27,7 @@
           <td><%= ssd.interface %></td>
           <td><%= ssd.rating %></td>
           <td><%= ssd.price %></td>
-          <td><%= button_to "Add to Build" %></td>
+          <td><%= button_to "Add", {}, class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

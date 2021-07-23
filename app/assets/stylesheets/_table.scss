@@ -1,11 +1,72 @@
 /* build-table */
+@import 'base';
+
 .table-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin-top: 5em;
+
+  .table {
+    border-collapse: collapse;
+    width: 80rem;
+
+    caption {
+      font-size: 3rem;
+    }
+
+    thead {
+      tr {
+        background-color: #303030 !important;
+        color: #caccd1;
+        text-align: left;
+        font-weight: bolder;
+
+        th {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #303030;
+        text-align: center;
+
+        &:nth-child(odd) {
+          background-color: #f3f3f3;
+        }
+
+        &:last-of-type {
+          border-bottom: 2px solid black;
+        }
+      }
+    }
+
+    img {
+      width: 2rem;
+    }
+  }
 }
+
+
+
+.add-button {
+  background-color: var(--clr-accent4);
+  color: var(--clr-light);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: .5em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--clr-accent3);
+  }
+}
+
 
 // .table {
 //   border-collapse: collapse;

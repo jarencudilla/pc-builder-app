@@ -79,7 +79,6 @@ class BuildsController < ApplicationController
     @build_hdd = @build.build_hdds.build
     @build_ram = @build.build_rams.build
     @build_ssd = @build.build_ssds.build
-    
   end
 
   def create

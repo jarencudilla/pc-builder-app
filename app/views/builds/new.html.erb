@@ -43,35 +43,35 @@
 
       <%= f.fields_for :build_case_fans do |g| %>
         <div class="field">
-          <%= g.label :name, "Case Fan(s)" %>
+          <%= g.label :name, "Case Fan(s)" %><br />
           <%= g.collection_select :case_fan_id, CaseFan.order(:name), :id, :name, include_blank: true %>
         </div>
       <% end %>
       
       <%= f.fields_for :build_gpus do |g| %>
         <div class="field">
-          <%= g.label :name, "GPU(s)" %>
+          <%= g.label :name, "GPU(s)" %><br />
           <%= g.collection_select :gpu_id, Gpu.order(:name), :id, :name, include_blank: true %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_hdds do |g| %>
         <div class="field">
-          <%= g.label :name, "HDD(s)" %>
+          <%= g.label :name, "HDD(s)" %><br />
           <%= g.collection_select :hdd_id, Hdd.order(:name), :id, :name, include_blank: true %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_rams do |g| %>
         <div class="field">
-          <%= g.label :name, "RAM(s)" %>
+          <%= g.label :name, "RAM(s)" %><br />
           <%= g.collection_select :ram_id, Ram.order(:name), :id, :name, include_blank: true %>
         </div>
       <% end %>
 
       <%= f.fields_for :build_ssds do |g| %>
         <div class="field">
-          <%= g.label :name, "SSD(s)" %>
+          <%= g.label :name, "SSD(s)" %><br />
           <%= g.collection_select :ssd_id, Ssd.order(:name), :id, :name, include_blank: true %>
         </div>
       <% end %>

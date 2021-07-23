@@ -1,0 +1,103 @@
+// Place all the styles related to the builds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'base';
+
+.builder-text {
+  @include flexCenter(column, center, center);
+  width: 100%;
+  background-color: var(--clr-darker);
+  padding: 2rem;
+
+  h1 {
+    color: white;
+    margin-bottom: 15px;
+    text-decoration: underline 3px solid var(--clr-accent4);
+    text-underline-offset: 10px;
+  }
+
+  p {
+    color: grey;
+  }
+}
+
+.container {
+  @include flexCenter(column, space-evenly, center);
+  padding-top: 2rem;
+  width: 100%;
+
+  .wattage {
+    margin-top: 2rem;
+  }
+
+  .component {
+    width: 80%;
+    height: 30vh;
+    border-bottom: solid 1px var(--clr-darker);
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+
+
+    p {
+      color: dimgray;
+    }
+
+    .parts-button {
+      color: white;
+      background-color: var(--clr-accent4);
+      padding: .8em 1.5em;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background-color: var(--clr-accent3);
+      }
+    }
+  }
+}
+
+.cpu-container, .component {
+  @include flexCenter(column, space-evenly, center);
+
+  .cpu-text {
+    @include flexCenter(column, center, center);
+  }
+
+  .cpu-choose, .two-choose {
+    @include flexCenter(row, space-evenly, center);
+    width: 15rem;
+
+    .opt {
+      @include flexCenter(column, space-between, center);
+    
+      .tooltip {
+        visibility: hidden;
+        width: 15rem;
+        background-color: var(--clr-darkest);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 5px;
+        position: absolute;
+        z-index: 1;
+        margin-top: 3.7rem;
+      }
+    
+      &:hover .tooltip {
+        visibility: visible;
+    
+        &::after {
+          content: " ";
+          position: absolute;
+          bottom: 100%;  /* At the top of the tooltip */
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent var(--clr-darkest) transparent;}
+      }
+    }
+  }
+}

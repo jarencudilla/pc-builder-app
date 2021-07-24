@@ -1,6 +1,8 @@
 <section class="table-container">
   <table class="table">
-    <Caption>Hard Drives</Caption>
+    <Caption>Hard Drives
+    <%= link_to "Back", ssd_path(cpu_id: @cpu.id, mobo_id: @mobo.id, ram_id: @ram.id), class:"back" %>
+    </Caption>
 
     <thead>  
       <tr>

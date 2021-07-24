@@ -19,9 +19,14 @@
 
     .field {
       margin-bottom: 1em;
+
+      h2 {
+        font-size: var(--fs-body);
+      }
     }
 
-    input, select {
+    input,
+    select {
       width: 35rem;
       font-size: var(--fs-body);
       padding: 0.5em;

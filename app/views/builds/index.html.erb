@@ -26,34 +26,34 @@
 
   <div class="component">
     <h1>CPU Fan</h1>
-    <%= button_to 'Choose a CPU Fan', {}, class:'parts-button' %>
+    <%= link_to 'Choose a CPU Fan', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>Motherboard</h1>
-    <%= button_to 'Choose a Motherboard', {}, class:'parts-button' %>
+    <%= link_to 'Choose a Motherboard', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>Graphics Card</h1>
-    <%= button_to 'Choose a Graphics Card', {}, class:'parts-button' %>
+    <%= link_to 'Choose a Graphics Card', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>RAM kit</h1>
-    <%= button_to 'Choose a RAM kit', {}, class:'parts-button' %>
+    <%= link_to 'Choose a RAM kit', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>Storage Drive</h1>
     <div class="two-choose">
       <div class="opt">
-        <%= button_to 'SSD', {}, class:'parts-button' %>
+        <%= link_to 'SSD', {}, class:'parts-button' %>
         <span class="tooltip">We recommend a Solid State Drive for your main boot drive.</span>
       </div>
       <p>or</p>
       <div class="opt">
-        <%= button_to 'HDD', {}, class:'parts-button' %>
+        <%= link_to 'HDD', {}, class:'parts-button' %>
         <span class="tooltip">And a Hard Disk Drive with large capacity for your storage and media library.</span>
       </div>
     </div>
@@ -62,39 +62,18 @@
   <div class="component">
     <h1>Case</h1>
     Note: Some Cases include a Power Supply and Case Fans
-    <%= button_to 'Choose a Case', {}, class:'parts-button' %>
+    <%= link_to 'Choose a Case', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>Power Supply</h1>
     Note: Check the estimated wattage on the top of this current build to ensure that you pick the correct PSU to power your build.
-    <%= button_to 'Choose a Power Supply', {}, class:'parts-button' %>
+    <%= link_to 'Choose a Power Supply', {}, class:'parts-button' %>
   </div>
 
   <div class="component">
     <h1>Case Fan</h1>
-    <%= button_to 'Choose a Case Fan', {}, class:'parts-button' %>
+    <%= link_to 'Choose a Case Fan', {}, class:'parts-button' %>
   </div>
 
-  <div class="wattage">
-    <h2>Estimated Wattage:</h2> 
-  </div>
-</div>
-
-<div class="container">
-<% if @cpus = @cpus.select{ |cpu| cpu.socket.include?("LGA1151") }%>
-<%= render 'parts/cpu_intel' %>
-<% else %>
-<%= render 'parts/cpu_amd' %>
-<% end %>
-
-<%= render 'parts/cpu_fan' %>
-<%= render 'parts/mobos' %>
-<%= render 'parts/gpu' %>
-<%= render 'parts/ram' %>
-<%= render 'parts/hdd' %>
-<%= render 'parts/ssd' %>
-<%= render 'parts/case' %>
-<%= render 'parts/psu' %>
-<%= render 'parts/case_fan' %>
 </div>

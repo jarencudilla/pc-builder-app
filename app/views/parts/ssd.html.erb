@@ -27,7 +27,11 @@
           <td><%= ssd.interface %></td>
           <td><%= ssd.rating %></td>
           <td><%= ssd.price %></td>
-          <td><%= button_to "Add", {}, class:'add-button' %></td>
+          <td><%= link_to "Add", hdd_path(cpu_id: @cpu.id, 
+                                          mobo_id: @mobo.id,
+                                          ram_id: @ram.id,
+                                          ssd_id: ssd.id),
+                                          class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

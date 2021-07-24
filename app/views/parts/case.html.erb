@@ -24,14 +24,18 @@
           <td><%= c.form_factor %></td>
           <td><%= c.color %></td>
           <td><%= c.power_supply %></td>
-          <td><% c.motherboard_form_factor.each do |a| %>
-          <%= a %>
-          <%end%></td>
-          <td><% c.internal_bays.each do |a| %>
-          <%= a.to_s.gsub(/[@\[\]"]/, "") %>
-          <%end%></td>
+          <td><% c.motherboard_form_factor %></td>
+          <td><% c.internal_bays %></td>
           <td><%= c.price %></td>
-          <td><%= button_to "Add", {}, class:'add-button' %></td>
+          <td><%= link_to "Add", case_fan_path(cpu_id: @cpu.id, 
+                                              mobo_id: @mobo.id,
+                                              ram_id: @ram.id,
+                                              ssd_id: @ssd.id,
+                                              hdd_id: @hdd.id,
+                                              gpu_id: @gpu.id,
+                                              psu_id: @psu.id,
+                                              case_id: c.id), 
+                                              class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

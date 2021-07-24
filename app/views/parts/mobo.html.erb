@@ -25,7 +25,9 @@
           <td><%= mobo.max_memory %></td>
           <td><%= mobo.memory_slots %></td>
           <td><%= mobo.price %></td>
-          <td><%= button_to "Add", {}, class:'add-button' %></td>
+          <td><%= link_to "Add", ram_path(cpu_id: @cpu.id, 
+                                          mobo_id: mobo.id), 
+                                          class:'add-button' %></td>
         </tr>
       <%end%>
     </tbody>

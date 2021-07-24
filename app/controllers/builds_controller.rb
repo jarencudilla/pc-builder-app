@@ -1,4 +1,3 @@
-require 'byebug'
 class BuildsController < ApplicationController
   # before_action :authenticate_user!
 

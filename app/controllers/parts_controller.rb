@@ -84,5 +84,4 @@ class PartsController < ApplicationController
     @case_fan = CaseFan.find(params[:case_fan_id])
     @cpu_fans = CpuFan.all
   end
-
 end

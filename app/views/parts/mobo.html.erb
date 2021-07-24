@@ -1,7 +1,9 @@
 <section class="table-container">
   <table class="table">
-    <Caption>Motherboards</Caption>
-
+    <Caption>Motherboards
+      <%= link_to "Back", cpu_path, class:"back" %>
+    </Caption>
+    
     <thead>  
       <tr>
         <th>Image</th>
@@ -16,7 +18,7 @@
     </thead>
 
     <tbody>
-      <% @mobos.take(10).each do |mobo| %>
+      <% @mobos.take(20).each do |mobo| %>
         <tr>
           <td><%= image_tag mobo.image, style: "height:50px;width:auto;" %></td>
           <td><%= mobo.name.to_s.truncate(18) %></td>

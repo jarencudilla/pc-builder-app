@@ -3,33 +3,14 @@ class BuildsController < ApplicationController
   # before_action :authenticate_user!
 
   def index
-    @cpus = Cpu.all
-    @mobos = Mobo.all
-    @cpu_fans = CpuFan.all
-    @gpus = Gpu.all
-    @rams = Ram.all
-    @hdds = Hdd.all
-    @ssds = Ssd.all
-    @cases = Case.all
-    @psus = Psu.all
-    @case_fans = CaseFan.all
+    @builds = current_user.builds
+
   end
 
-  # def show
-  #   @cpus = Cpu.find(params[:id])
-
-  #   respond_to do |format|
-  #     format.html # show.html.erb
-  #     format.json { render json: @cpus }
-  #   end
-
-  #   @mobos = Mobo.find(params[:id])
-
-  #   respond_to do |format|
-  #     format.html # show.html.erb
-  #     format.json { render json: @mobos }
-  #   end
-  # end
+  def show
+    @build = Build.find(params[:id])
+    
+  end
 
   def new
     @build = Build.new
@@ -57,7 +38,7 @@ class BuildsController < ApplicationController
     
 
     if @build.save
-      redirect_to root_path, notice: 'Build Successfully Created'
+      redirect_to builds_path, notice: 'Build Successfully Created'
     else
       render :new
     end

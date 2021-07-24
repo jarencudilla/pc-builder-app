@@ -12,38 +12,39 @@
       </div>
 
       <div class="field">
-        <%= f.label "Motherboard" %><br /> <%= f.text_field '', value: @mobo.name %>
+        <%= f.label "Motherboard" %><br /> 
+          <h2> <%= @mobo.name %> </h2>
         <%= f.hidden_field :mobo_id, value: @mobo.id %>
       </div>
 
       <div class="field">
         <%= f.label "CPU" %><br />
-        <%= f.text_field '', value: @cpu.name %>
+          <h2> <%= @cpu.name %> </h2>
         <%= f.hidden_field :cpu_id, value: @cpu.id %>
       </div>
 
       <div class="field">
         <%= f.label "PSU" %><br />
-          <%= f.text_field '', value: @psu.name %>
+          <h2> <%= @psu.name %> </h2>
         <%= f.hidden_field :psu_id, value: @psu.id %>
       </div>
 
       <div class="field">
         <%= f.label "Case" %><br />
-          <%= f.text_field '', value: @case.name %>
+          <h2> <%= @case.name %> </h2>
         <%= f.hidden_field :case_id, value: @case.id %>
       </div>
 
       <div class="field">
         <%= f.label "CPU Fan" %><br />
-          <%= f.text_field '', value: @cpu_fan.name %>
+          <h2> <%= @cpu_fan.name %> </h2>
         <%= f.hidden_field :cpu_fan_id, value: @cpu_fan.id %>
       </div>
 
       <%= f.fields_for :build_case_fans do |g| %>
         <div class="field">
           <%= g.label :name, "Case Fan(s)" %><br />
-          <%= g.text_field '', value: @case_fan.name %>
+          <h2> <%= @case_fan.name %> </h2>
           <%= g.hidden_field :case_fan_id, value: @case_fan.id%>
         </div>
       <% end %>
@@ -51,7 +52,7 @@
       <%= f.fields_for :build_gpus do |g| %>
         <div class="field">
           <%= g.label :name, "GPU(s)" %><br />
-          <%= g.text_field '', value: @gpu.name %>
+          <h2> <%= @gpu.name %> </h2>
           <%= g.hidden_field :gpu_id, value: @gpu.id %>
         </div>
       <% end %>
@@ -59,7 +60,7 @@
       <%= f.fields_for :build_hdds do |g| %>
         <div class="field">
           <%= g.label :name, "HDD(s)" %><br />
-          <%= g.text_field '', value: @hdd.name %>
+          <h2> <%= @hdd.name %> </h2>
           <%= g.hidden_field :hdd_id, value: @hdd.id %>
         </div>
       <% end %>
@@ -67,7 +68,7 @@
       <%= f.fields_for :build_rams do |g| %>
         <div class="field">
           <%= g.label :name, "RAM(s)" %><br />
-          <%= g.text_field '', value: @ram.name %>
+          <h2> <%= @ram.name %> </h2>
           <%= g.hidden_field :ram_id, value: @ram.id %>
         </div>
       <% end %>
@@ -75,10 +76,27 @@
       <%= f.fields_for :build_ssds do |g| %>
         <div class="field">
           <%= g.label :name, "SSD(s)" %><br />
-          <%= g.text_field '', value: @ssd.name %>
+          <h2> <%= @ssd.name %> </h2>
           <%= g.hidden_field :ssd_id, value: @ssd.id %>
         </div>
       <% end %>
+
+      <div class="field">
+        <%= f.label "Total Cost" %><br />
+          <% @total_price = @mobo.price +
+                            @cpu.price +
+                            @gpu.price +
+                            @case.price +
+                            @psu.price +
+                            @cpu_fan.price +
+                            @case_fan.price +
+                            @hdd.price +
+                            @ram.price +
+                            @ssd.price
+          %>
+          <h2> <%= @total_price %> </h2>
+        <%= f.hidden_field :total_price, value: @total_price %>
+      </div>
     
       <div class="actions">
         <%= f.submit "Create Build" %>

@@ -1,0 +1,13 @@
+<div>
+  <h2>CPU: <%= @build.cpu.name %></h2>
+  <h2>Motherboard: <%= @build.mobo.name %></h2>
+  <h2>RAM: <%= @build.rams.first.name %></h2>
+  <h2>PSU: <%= @build.psu.name %></h2>
+  <h2>HDD: <%= @build.hdds.first.name %></h2>
+  <h2>SSD: <%= @build.ssds.first.name %></h2>
+  <h2>Case Fan: <%= @build.case_fans.first.name %></h2>
+  <h2>Case: <%= @build.case.name %></h2>
+  <h2>CPU Fan: <%= @build.cpu_fan.name %></h2>
+  <h2>GPU: <%= @build.gpus.first.name %></h2>
+  <h2>Total Price: <%= @build.total_price %></h2>
+</div>

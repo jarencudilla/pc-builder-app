@@ -1,0 +1,42 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Hard Drives
+    <%= link_to "Back", ssd_path(cpu_id: @cpu.id, mobo_id: @mobo.id, ram_id: @ram.id), class:"back" %>
+    </Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>RPM</th>
+        <th>Cache</th>
+        <th>Form Factor</th>
+        <th>Interface</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @hdds.take(10).each do |hdd| %>
+        <tr>
+          <td><%= image_tag hdd.image, style: "height:50px;width:auto;" %></td>
+          <td><%= hdd.name.to_s.truncate(28) %></td>
+          <td><%= hdd.capacity %></td>
+          <td><%= hdd.rpm %></td>
+          <td><%= hdd.cache %></td>
+          <td><%= hdd.form_factor %></td>
+          <td><%= hdd.interface %></td>
+          <td><%= hdd.price %></td>
+          <td><%= link_to "Add", gpu_path(cpu_id: @cpu.id, 
+                                          mobo_id: @mobo.id,
+                                          ram_id: @ram.id,
+                                          ssd_id: @ssd.id,
+                                          hdd_id: hdd.id), 
+                                          class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

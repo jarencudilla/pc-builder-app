@@ -1,52 +1,24 @@
-<section class="table">
-  <table class="content_table">
+<section class="table-container">
+  <table class="table">
+  <% @builds.each do |b| %>
+    <caption><% b.name %></caption>
+
     <thead>
       <tr>
-        <th>CPU</th>
-        <th>Motherboard</th>
-        <th>GPU</th>
-        <th>PSU</th>
-        <th>RAM</th>
-        <th>Storage</th>
-        <th>Case</th>
-        <th>Case Fan</th>
-        <th>CPU Fan</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>View</th>
+
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
-      </tr>
-      <tr>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
-        <td>d</td>
-        <td>r</td>
-        <td>f</td>
-        <td>g</td>
-        <td>h</td>
-        <td>i</td>
+        <td><%= b.name %></td>
+        <td><%= b.total_price %></td>
+        <td><%= link_to "Show", build_path(b) %></td>
+      <% end %> 
       </tr>
     </tbody>
   </table>
 </section>
+

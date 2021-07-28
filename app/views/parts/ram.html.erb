@@ -1,0 +1,38 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>RAMs
+    <%= link_to "Back", mobo_path(cpu_id: @cpu.id) , class:"back" %>
+    </Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Speed</th>
+        <th>Latency</th>
+        <th>Memory Type</th>
+        <th>Memory Size</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @rams.take(10).each do |ram| %>
+        <tr>
+          <td><%= image_tag ram.image, style: "height:50px;width:auto;" %></td>
+          <td><%= ram.name.to_s.truncate(30) %></td>
+          <td><%= ram.speed %></td>
+          <td><%= ram.latency %></td>
+          <td><%= ram.memory_type %></td>
+          <td><%= ram.memory_size %></td>
+          <td><%= ram.price %></td>
+          <td><%= link_to "Add", ssd_path(cpu_id: @cpu.id, 
+                                         mobo_id: @mobo.id,
+                                          ram_id: ram.id),
+                                          class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

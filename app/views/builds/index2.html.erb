@@ -1,0 +1,79 @@
+<div class="builder-text">
+  <h1>System Builder</h1>
+  <p>Choose the parts that you want</p>
+  <p>(Compatible parts only)</p>
+</div>
+
+<div class="container">
+
+  <div class="cpu-container component">
+    <div class="cpu-text">
+      <h1>CPU</h1>
+      <p>Note: Some CPUs already have an included stock fan</p>
+    </div>
+    <div class="cpu-choose two-choose">
+      <div class="opt">
+        <%= link_to "Intel", {render: 'parts/cpu_intel'}, class:'parts-button cpu-button' %>
+        <span class="tooltip">Intel CPUs have good performance also have higher base clocks but at the cost of higher power consumption and has a premuim price tag.</span>
+      </div>
+      <p>or</p>
+      <div class="opt">
+        <%= link_to "AMD", {render: 'parts/cpu_amd'}, class:'parts-button cpu-button' %>
+        <span class="tooltip">AMD CPUs are cheaper than their Intel counterparts and is more efficient especially for gaming and other heavy workloads like video editing and programming.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="component">
+    <h1>CPU Fan</h1>
+    <%= link_to 'Choose a CPU Fan', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>Motherboard</h1>
+    <%= link_to 'Choose a Motherboard', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>Graphics Card</h1>
+    <%= link_to 'Choose a Graphics Card', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>RAM kit</h1>
+    <%= link_to 'Choose a RAM kit', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>Storage Drive</h1>
+    <div class="two-choose">
+      <div class="opt">
+        <%= link_to 'SSD', {}, class:'parts-button' %>
+        <span class="tooltip">We recommend a Solid State Drive for your main boot drive.</span>
+      </div>
+      <p>or</p>
+      <div class="opt">
+        <%= link_to 'HDD', {}, class:'parts-button' %>
+        <span class="tooltip">And a Hard Disk Drive with large capacity for your storage and media library.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="component">
+    <h1>Case</h1>
+    Note: Some Cases include a Power Supply and Case Fans
+    <%= link_to 'Choose a Case', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>Power Supply</h1>
+    Note: Check the estimated wattage on the top of this current build to ensure that you pick the correct PSU to power your build.
+    <%= link_to 'Choose a Power Supply', {}, class:'parts-button' %>
+  </div>
+
+  <div class="component">
+    <h1>Case Fan</h1>
+    <%= link_to 'Choose a Case Fan', {}, class:'parts-button' %>
+  </div>
+
+</div>

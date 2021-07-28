@@ -1,0 +1,45 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Cases
+    <%= link_to "Back", psu_path(cpu_id: @cpu.id, mobo_id: @mobo.id, ram_id: @ram.id, ssd_id: @ssd.id, hdd_id: @hdd.id, gpu_id: @gpu.id), class:"back" %>
+    </Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Form Factor</th>
+        <th>Color</th>
+        <th>Power Supply</th>
+        <th>Mobo Form Factor</th>
+        <th>Internal Bays</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cases.take(10).each do |c| %>
+        <tr>
+          <td><%= image_tag c.image, style: "height:50px;width:auto;" %></td>
+          <td><%= c.name.to_s.truncate(28) %></td>
+          <td><%= c.form_factor %></td>
+          <td><%= c.color %></td>
+          <td><%= c.power_supply %></td>
+          <td><% c.motherboard_form_factor %></td>
+          <td><% c.internal_bays %></td>
+          <td><%= c.price %></td>
+          <td><%= link_to "Add", case_fan_path(cpu_id: @cpu.id, 
+                                              mobo_id: @mobo.id,
+                                              ram_id: @ram.id,
+                                              ssd_id: @ssd.id,
+                                              hdd_id: @hdd.id,
+                                              gpu_id: @gpu.id,
+                                              psu_id: @psu.id,
+                                              case_id: c.id), 
+                                              class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,42 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Power Supplies
+    <%= link_to "Back", gpu_path(cpu_id: @cpu.id, mobo_id: @mobo.id, ram_id: @ram.id, ssd_id: @ssd.id, hdd_id: @hdd.id), class:"back" %>
+    </Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Form Factor</th>
+        <th>Efficiency Rating</th>
+        <th>Wattage</th>
+        <th>Modular</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @psus.take(10).each do |psu| %>
+        <tr>
+          <td><%= image_tag psu.image, style: "height:50px;width:auto;" %></td>
+          <td><%= psu.name.to_s.truncate(28) %></td>
+          <td><%= psu.form_factor %></td>
+          <td><%= psu.efficiency_rating %></td>
+          <td><%= psu.wattage %></td>
+          <td><%= psu.modular %></td>
+          <td><%= psu.price %></td>
+          <td><%= link_to "Add", case_path(cpu_id: @cpu.id, 
+                                          mobo_id: @mobo.id,
+                                          ram_id: @ram.id,
+                                          ssd_id: @ssd.id,
+                                          hdd_id: @hdd.id,
+                                          gpu_id: @gpu.id,
+                                          psu_id: psu.id), 
+                                          class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

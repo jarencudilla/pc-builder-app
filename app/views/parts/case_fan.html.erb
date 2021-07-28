@@ -1,0 +1,44 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Case Fans
+    <%= link_to "Back", case_path(cpu_id: @cpu.id, mobo_id: @mobo.id, ram_id: @ram.id, ssd_id: @ssd.id, hdd_id: @hdd.id, gpu_id: @gpu.id, psu_id: @psu.id), class:"back" %>
+    </Caption>
+
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Rpm</th>
+        <th>Airflow</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @case_fans.take(10).each do |casefan| %>
+        <tr>
+          <td><%= image_tag casefan.image, style: "height:50px;width:auto;" %></td>
+          <td><%= casefan.name.to_s.truncate(28) %></td>
+          <td><%= casefan.size %></td>
+          <td><%= casefan.color %></td>
+          <td><%= casefan.rpm %></td>
+          <td><%= casefan.airflow %></td>
+          <td><%= casefan.price %></td>
+          <td><%= link_to "Add", cpu_fan_path(cpu_id: @cpu.id, 
+                                              mobo_id: @mobo.id,
+                                              ram_id: @ram.id,
+                                              ssd_id: @ssd.id,
+                                              hdd_id: @hdd.id,
+                                              gpu_id: @gpu.id,
+                                              psu_id: @psu.id,
+                                              case_id: @case.id,
+                                              case_fan_id: casefan.id), 
+                                              class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

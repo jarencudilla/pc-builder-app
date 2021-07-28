@@ -1,0 +1,37 @@
+<section class="table-container">
+  <table class="table">
+    <Caption>Motherboards
+      <%= link_to "Back", cpu_path, class:"back" %>
+    </Caption>
+    
+    <thead>  
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Form Factor</th>
+        <th>Socket</th>
+        <th>Max Memory</th>
+        <th>Memory Slots</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @mobos.take(20).each do |mobo| %>
+        <tr>
+          <td><%= image_tag mobo.image, style: "height:50px;width:auto;" %></td>
+          <td><%= mobo.name.to_s.truncate(18) %></td>
+          <td><%= mobo.form_factor %></td>
+          <td><%= mobo.socket_cpu %></td>
+          <td><%= mobo.max_memory %></td>
+          <td><%= mobo.memory_slots %></td>
+          <td><%= mobo.price %></td>
+          <td><%= link_to "Add", ram_path(cpu_id: @cpu.id, 
+                                          mobo_id: mobo.id), 
+                                          class:'add-button' %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</section>

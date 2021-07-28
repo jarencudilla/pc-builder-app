@@ -10,7 +10,7 @@
 
 .welcome {
   @include flexCenter(column, center, center);
-  background-image: url('home.jpg');
+  background-image: url('/images/home.jpg');
   background-color: var(--clr-darkest);
   background-blend-mode: lighten;
   background-size: cover;

@@ -16,20 +16,19 @@
     </tr>
   </thead>  
   <tbody>
-      <tr>
-        <td><%= @build.cpu.name %></td>
-        <td><%= @build.mobo.name %></td>
-        <td><%= @build.rams.first.name %></td>
-        <td><%= @build.psu.name %></td>
-        <td><%= @build.hdds.first.name %></td>
-        <td><%= @build.ssds.first.name %></td>
-        <td><%= @build.case_fans.first.name %></td>
-        <td><%= @build.case.name %></td>
-        <td><%= @build.cpu_fan.name %></td>
-        <td><%= @build.gpus.first.name %></td>
-        <td><%= @build.total_price %></td>
-      </tr>
-      <%end%>
+    <tr>
+      <td><%= @build.cpu.name %></td>
+      <td><%= @build.mobo.name %></td>
+      <td><%= @build.rams.first.name %></td>
+      <td><%= @build.psu.name %></td>
+      <td><%= @build.hdds.first.name %></td>
+      <td><%= @build.ssds.first.name %></td>
+      <td><%= @build.case_fans.first.name %></td>
+      <td><%= @build.case.name %></td>
+      <td><%= @build.cpu_fan.name %></td>
+      <td><%= @build.gpus.first.name %></td>
+      <td><%= @build.total_price.to_s %></td>
+    </tr>
   </tbody>
 </table>
 </section>
